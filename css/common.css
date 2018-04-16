@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+html { scrollbar-arrow-color: #efefef;
+
+        scrollbar-Track-Color: none; 
+        scrollbar-base-color: #dfdfdf;
+
+        scrollbar-Face-Color: #dfdfdf;
+
+        scrollbar-3dLight-Color: #dfdfdf;         
+        scrollbar-DarkShadow-Color: #dfdfdf;
+
+        scrollbar-Highlight-Color: #dfdfdf;
+
+        scrollbar-Shadow-Color: #dfdfdf}
+        
+::-webkit-scrollbar {width: 5px; height: 5px; }
+/*::-webkit-scrollbar-button:start:decrement, */
+/*::-webkit-scrollbar-button:end:increment {display: block; width: 12px;height: 12px; background: url() rgba(0,0,0,.05);}*/
+::-webkit-scrollbar-track {  background: rgba(102,102,102,0.7);  border-radius:3px; }
+::-webkit-scrollbar-thumb {  background: #454545;  border-radius:3px; }
+
+* {padding:0; margin:0; text-decoration:none; list-style:none; box-sizing:border-box; font-family:'Nanum Gothic', sans-serif;}
+body {position:relative; max-width:1920px; font-size:12px; color:#dcdcdc; background:#191b1e;}
+button {border:none; background:transparent; cursor:pointer; color:#dcdcdc;}
+.class-clearfix:after {display:block; content:''; clear:both;}
+
+
+/* header S */
+.class-header {width:100%; height:50px; padding:0 10px; line-height:45px; background:#000;}
+.class-logo {float:left; font-size:20px;}
+.class-tnb {float:right;}
+.class-tnb nav {position:relative; float:left;}
+.class-tnb nav button {margin-right:50px; font-size:14px;}
+.class-tnb nav button span {display:inline-block; width:0; height:0; border-style:solid; border-width:4px; border-color:#fff transparent transparent transparent; margin-left:10px;}
+.class-gnbInner.class-none {display:none;}
+.class-tnb nav ul {position:absolute; top:50px; right:50px; z-index:3000; width:180px; border:1px solid #363739; background:#202226;}
+.class-tnb nav ul li {width:100%; padding-left:10px; font-size:12px;}
+.class-tnb nav ul li a {display:block; width:100%; line-height:35px; color:#fff;}
+.class-tnb select {float:left; width:135px; height:30px; padding:0 10px; margin-top:10px; border:1px solid #363739; color:#a0a0a0; background:#202226;}
+/* header E */
+
+/* container S */
+.class-container {width:1600px; height:1010px; padding:27px 55px 41px 49px; margin:10px; background:#202226;}
+.class-chartWrap {position:relative; width:100%; height:100%;}
+.class-chartWrap h2 {width:100%; margin-bottom:20px; text-align:center; font-size:20px; color:#a0a0a0;}
+.class-chartWrap h2 span {color:#a0a0a0;}
+.class-chartInner {width:100%; height:100%; background:url(../img/images/img-chart.png) no-repeat center;}
+.class-chartInner.class-openHistory {height:660px; background-size:100% 660px;}
+.class-lineWrap div {position:absolute; left:52px;}
+.class-lineWrap div input[type="checkbox"] {display:none;}
+.class-lineWrap div label {position:absolute; top:-8px; right:-20px; display:block; width:16px; height:16px; border-radius:50%; color:#fff; text-align:center; line-height:14px; background:#a0a0a0;}
+.class-lineWrap .class-lineR {top:312px;}
+.class-lineWrap .class-lineR label {background:#ed1100;}
+.class-lineWrap .class-lineY {top:477px;}
+.class-lineWrap .class-lineY label {color:#000; background:#ffd200;}
+.class-lineWrap div .class-line {width:1430px; height:0; border-top-width:1px; border-top-style:dashed;}
+.class-lineWrap .class-lineR .class-line {border-top-color:#ed1100;}
+.class-lineWrap .class-lineY .class-line {border-top-color:#ffd200;}
+
+.class-alarmHistory {position:absolute; bottom:-10px; left:0; width:1610px; height:286px; padding:10px; padding-top:25px; background:#1d1e22; text-align:center;}
+.class-sizing {position:absolute; top:0; left:0; width:100%; height:16px; background:linear-gradient(rgba(255,255,255,0.1) 2px, #131518 , rgba(0,0,0,0.5) 2px);}
+.class-sizing p {width:100%; height:100%; background:url(../img/images/icon_sizing.png) no-repeat center;}
+.class-alarmHistory h2 {margin-bottom:20px;}
+.class-alarmHistory .class-listHeading {border-bottom:1px solid #868789;}
+.class-alarmHistory .class-listHeading li {border:none;}
+.class-alarmHistory .class-selectList {height:160px; overflow:auto;}
+.class-alarmHistory .class-AOT {width:188px;}
+.class-alarmHistory .class-ART {width:162px;}
+.class-alarmHistory .class-unit {width:203px;}
+.class-alarmHistory .class-alarmId {width:151px;}
+.class-alarmHistory .class-alarmLevel {width:156px;}
+.class-alarmHistory .class-alarmtext {width:300px;}
+.class-alarmHistory .class-solution {width:425px;}
+/* container E */
+
+/* aside S */
+.class-legendWrap {position:absolute; top:50px; right:0; width:300px; height:1030px; padding:10px; background:#202226;}
+.class-legendWrap > div {position:relative; margin-bottom:15px;}
+.class-legendWrap > div:last-child {margin-bottom:0px;}
+.class-legendWrap > div h3 {width:100%; padding:0 15px; line-height:50px; font-size:16px; color:#fff; background:#191b1e;}
+.class-btnSelect {position:absolute; top:0; right:15px; height:50px;}
+.class-legendWrap > div ul {padding:0 15px; background:rgba(255,255,255,0.08);}
+.class-legendWrap > div ul li {line-height:45px;}
+.class-dateWrap ul li:first-child {border-bottom:1px dashed #4c4d50;}
+.class-dateWrap ul li > p {float:left; font-size:14px; color:#fff;}
+.class-dateWrap ul li > div {float:right;}
+.class-dateWrap ul li > div p {position:relative; float:left;}
+.class-btnCalender {position:absolute; top:0; left:0; width:100%; height:100%;}
+.class-dateWrap ul li > div select {float:right; height:45px; border:none; margin-left:20px; background:transparent; color:#ebebeb; font-size:12px; cursor:pointer;}
+.class-commonlist {width:100%;}
+.class-commonlist li:after {content:''; display:block; clear:both;}
+.class-commonlist li h4 {float:left;}
+.class-commonlist li h4 .class-icon {display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:10px; vertical-align:middle;}
+.class-commonlist .class-list1 .class-icon {background:#fff;}
+.class-commonlist .class-list2 .class-icon {background:#0277bd;}
+.class-alarmsList li h4 .class-icon {background:#0277bd;}
+.class-commonlist li form {float:right;}
+.class-commonlist li form input[type="radio"] {display:none;}
+.class-commonlist li form label {position:relative; display:inline-block; width:30px; height:12px; border:1px solid #fff; border-radius:6px; background:#787878; transition:0.5s; cursor:pointer;}
+.class-commonlist li form label span {position:absolute; top:1px; left:1px; width:8px; height:8px; border-radius:50%; background:#fff; transition:0.5s;}
+.class-commonlist li form input[type="radio"]:checked + label {background:#202226;}
+.class-commonlist li form input[type="radio"]:checked + label span {left:19px;}
+.class-btnDelete {position:relative; width:12px; height:12px; margin-left:6px;}
+.class-btnDelete span {position:absolute; top:6px; left:0px; width:14px; height:1px; transform:rotate(45deg); background:#666;}
+.class-btnDelete span:last-child {transform:rotate(-45deg);}
+.class-alarmsList {height:648px; overflow-y:auto;}
+
+.class-selectPop {position:absolute; display:block; top:0; left:-810px; width:800px; height:430px; padding:20px; border:1px solid #acb0b1; background:linear-gradient(#1a1b1e, #202226);}
+.class-selectPop.class-none {display:none;}
+.class-popTop {margin-bottom:20px;}
+.class-popTop h4 {float:left; font-size:16px; line-height:30px;}
+.class-popTop form {float:right; position:relative;}
+.class-popTop form span {margin-right:20px; color:#fff;}
+.class-popTop form input {width:270px; height:30px; border:none;}
+.class-popTop form button {position:absolute; top:2px; right:5px; font-size:18px; color:#787878;}
+
+.class-btnFilter.class-act {background:linear-gradient(#000, #191b1e 25%);}
+.class-btnFilter.class-act + .class-filterList {display:block;}
+.class-selectPop form .class-selectList, .class-alarmHistory form .class-selectList {position:relative; width:100%; height:240px; padding:0; margin-bottom:20px; overflow:auto; clear:both;}
+.class-selectPop form .class-selectList li,  .class-alarmHistory form .class-selectList li {line-height:40px; text-align:center; border-bottom:1px dashed rgba(134,135,137,0.4);}
+.class-selectPop form .class-selectList li:after,  .class-alarmHistory form .class-selectList li:after {content:''; display:block; clear:both;}
+.class-selectPop form .class-listHeading,  .class-alarmHistory form .class-listHeading {padding:0; background:#191b1e;}
+.class-selectPop form .class-listHeading > li, .class-alarmHistory form .class-listHeading > li {position:relative; float:left; border-right:1px dashed rgba(134,135,137,0.4); text-align:center; line-height:40px;}
+.class-selectPop form .class-listHeading > li:last-child, .class-alarmHistory form .class-listHeading > li:last-child {border-right:none;}
+.class-listHeading > li button {display:block; width:100%; height:40px;}
+.class-listHeading > li button span {display:inline-block; border-style:solid; border-width:4px; border-color:#fff transparent transparent transparent; margin-left:10px;}
+.class-listHeading li .class-filterList {display:none; position:absolute; top:40px; left:0; z-index:200; width:100%; height:145px; padding:0; border:1px solid #868789; background:#24262d; overflow:auto;}
+.class-listHeading li .class-filterList li {position:relative; text-align:left;}
+.class-listHeading li .class-filterList li input[type="checkbox"] {position:absolute; top:50%; left:10px; transform:translateY(-50%);}
+.class-listHeading li .class-filterList li label {display:block; width:100%; height:100%; padding-left:33px;}
+.class-listHeading li .class-filterList li input[type="checkbox"]:checked + label {background:#3fbcef;}
+.class-line {width:78px;}
+.class-machine {width:177px;}
+.class-unit {width:137px;}
+.class-item {width:240px;}
+.class-type {width:126px;}
+.class-listInner .class-type {width:121px;}
+.class-listInner {position:relative;}
+.class-innerCheck {position:absolute; top:0; left:0; width:100%; height:100%;}
+.class-innerCheck.class-checked ~ p {color:#333; background:#c0bdc0;}
+.class-listInner p {float:left; border-right:1px dashed rgba(134,135,137,0.4);}
+.class-listInner p:last-of-type {border-right:none;}
+.class-selectPop form > p {float:left; color:#a0a0a0;}
+.class-selectPop form > .class-btnWrap {float:right;}
+.class-btnWrap button {position:static; width:90px; height:40px; margin-left:20px; color:#fff; font-size:14px; font-weight:800;}
+.class-btnWrap .class-btnCancel {background:#313337;}
+.class-btnWrap .class-btnSelect {background:#3fbcef;}
+.class-alarmsWrap .class-check {width:58px;}
+.class-alarmsWrap .class-line {width:102px;}
+.class-alarmsWrap .class-machine {width:196px;}
+.class-alarmsWrap .class-unit {width:156px;}
+.class-alarmsWrap .class-alarmId {width:241px;}
+.class-alarmsWrap .class-listHeading .class-alarmId {width:246px;}
+.class-alarmsWrap .class-check input[type="checkbox"] {display:none;}
+/* aside E */
+
+
+
+
