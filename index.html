@@ -30,7 +30,7 @@
             <button>Service<span></span></button>
             
             <!-- 활성화 시 class-none 삭제 / 비활성화 시 class-none -->
-            <ul class="class-gnbInner">
+            <ul class="class-gnbInner class-none">
                 <li>
                     <a href="#">Spectrum Dashbord</a>
                 </li>
@@ -50,19 +50,26 @@
 <!-- container S -->
 <section id="id-container" class="class-container">
     <section id="id-chart" class="class-chartWrap">
+    
+        <!-- chart 생성시 h2에 addClass 'class-on' -->
         <h2>
-            <span>관리 항목 명</span>
-            &#40;
-            <span>장비명</span>
-            &#47;
-            <span>유닛명</span>
-            &#41;
+            <p class="class-chartTitle">
+                <span>관리 항목 명</span>
+                &#40;
+                <span>장비명</span>
+                &#47;
+                <span>유닛명</span>
+                &#41;
+            </p>
+            
+            <p class="class-noChart">Please select an item to be shown in the chart.</p>
         </h2>
         
         <!-- alarm history pop-up open시 class-openHistory 추가 -->
-        <div class="class-chartInner class-openHistory"><!-- chart 들어가는 자리 입니다 --></div>
+        <div class="class-chartInner"><!-- chart 들어가는 자리 입니다 --></div>
         
-        <div class="class-lineWrap">
+        <!-- chart 생성시 class-none 삭제 -->
+        <div class="class-lineWrap class-none">
             <form>
                 <div class="class-lineR">
                     <input type="checkbox" id="id-lineR">
@@ -82,7 +89,7 @@
     
     <!-- click event 발생하여 활성화 할 시 class-none 삭제 -->
     <!-- click event 발생하여 비활성화 할 시 class-none -->
-    <section id="id-alarmHistory" class="class-alarmHistory">
+    <section id="id-alarmHistory" class="class-alarmHistory class-none">
         <div class="class-sizing"><p></p></div>
         
         <h2>Alarm History</h2>
@@ -242,7 +249,8 @@
             <i class="fas fa-plus"></i>
         </button>
 
-        <ul class="class-commonlist class-itemList">
+        <!-- select item 추가 시 ul에 removeClass'class-none' -->
+        <ul class="class-commonlist class-itemList class-none">
             <li class="class-list1">
                 <h4>
                     <span class="class-icon"></span>
@@ -250,7 +258,7 @@
                 </h4>
 
                 <form>
-                    <input type="radio" name="list1toggle" id="id-Ilist1">
+                    <input type="checkbox" name="list1toggle" id="id-Ilist1">
                     <label for="id-Ilist1"><span><!-- toggle icon --></span></label>
 
                     <button class="class-btnDelete" value="삭제"><span></span><span></span></button>
@@ -263,7 +271,7 @@
                 </h4>
 
                 <form>
-                    <input type="radio" name="list2toggle" id="id-Ilist2">
+                    <input type="checkbox" name="list2toggle" id="id-Ilist2">
                     <label for="id-Ilist2"><span><!-- toggle icon --></span></label>
 
                     <button class="class-btnDelete" value="삭제"><span></span><span></span></button>
@@ -274,7 +282,7 @@
 
         <!-- click event 발생하여 활성화 할 시 class-none 삭제 -->
         <!-- click event 발생하여 비활성화 할 시 class-none -->
-        <div class="class-selectPop">
+        <div class="class-selectPop class-none">
             <div class="class-popTop class-clearfix">                
                 <h4>Select Items</h4>
 
@@ -441,7 +449,8 @@
             <i class="fas fa-plus"></i>
         </button>
 
-        <ul class="class-commonlist class-alarmsList">
+        <!-- select item 추가 시 ul에 removeClass'class-none' -->
+        <ul class="class-commonlist class-alarmsList class-none">
             <li>
                 <h4>
                     <span class="class-icon"></span>
@@ -449,7 +458,7 @@
                 </h4>
 
                 <form>
-                    <input type="radio" id="id-Alist1">
+                    <input type="checkbox" id="id-Alist1">
                     <label for="id-Alist1"><span><!-- toggle icon --></span></label>
 
                     <button class="class-btnDelete" value="삭제"><span></span><span></span></button>
@@ -462,7 +471,7 @@
                 </h4>
 
                 <form>
-                    <input type="radio" id="id-Alist2">
+                    <input type="checkbox" id="id-Alist2">
                     <label for="id-Alist2"><span><!-- toggle icon --></span></label>
 
                     <button class="class-btnDelete" value="삭제"><span></span><span></span></button>
@@ -475,7 +484,7 @@
                 </h4>
 
                 <form>
-                    <input type="radio" id="id-Alist3">
+                    <input type="checkbox" id="id-Alist3">
                     <label for="id-Alist3"><span><!-- toggle icon --></span></label>
 
                     <button class="class-btnDelete" value="삭제"><span></span><span></span></button>
@@ -488,7 +497,7 @@
                 </h4>
 
                 <form>
-                    <input type="radio" id="id-Alist4">
+                    <input type="checkbox" id="id-Alist4">
                     <label for="id-Alist4"><span><!-- toggle icon --></span></label>
 
                     <button class="class-btnDelete" value="삭제"><span></span><span></span></button>
@@ -499,7 +508,7 @@
 
         <!-- click event 발생하여 활성화 할 시 class-none 삭제 -->
         <!-- click event 발생하여 비활성화 할 시 class-none -->
-        <div class="class-selectPop">
+        <div class="class-selectPop class-none">
             <div class="class-popTop class-clearfix">                
                 <h4>Select Alarms</h4>
 
