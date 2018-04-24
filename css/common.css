@@ -49,8 +49,17 @@ button {border:none; background:transparent; cursor:pointer; color:#dcdcdc;}
 .class-chartWrap h2.class-on .class-chartTitle {display:block;}
 .class-chartWrap h2 .class-chartTitle span {color:#a0a0a0;}
 .class-chartWrap h2.class-on .class-noChart {display:none;} 
-.class-chartInner {width:100%; height:calc(100% - 47px); background:url(../img/images/chart_empty.png) no-repeat center; background-size:contain;}
+.class-chartInner {position:relative; width:100%; height:calc(100% - 47px); background:url(../img/images/chart_empty.png) no-repeat center; background-size:100% auto;}
 .class-chartInner.class-openHistory {height:660px; background-size:100% 660px;}
+.class-barWrap {position:absolute; top:7px; left:40px; width:calc(100% - 55px); height:30px; background:transparent;}
+.class-barWrap .class-barBG {position:relative; width:100%; height:100%; background:#555;}
+.class-barWrap .class-barBG .class-barInner {position:absolute; top:0; height:100%; background:#37383c;}
+.class-barWrap .class-barBG .class-barInner.class-left {left:0; width:750px;}
+.class-barWrap .class-barBG .class-barInner.class-right {right:0; width:0px;}
+.class-barWrap .class-barBG button {position:absolute; top:0; z-index:1; width:30px; height:30px; border-radius:50%; background:#ccc;}
+.class-barWrap .class-barBG button span {display:inline-block; width:4px; height:13px; border-left:1px solid #666; border-right:1px solid #666;}
+.class-iconBar1 {left:735px;}
+.class-iconBar2 {right:-15px;}
 .class-lineWrap div {position:absolute; width:100%; padding-left:52px;}
 .class-lineWrap div input[type="checkbox"] {display:none;}
 .class-lineWrap div label {position:absolute; top:-8px; right:-20px; display:block; width:16px; height:16px; border-radius:50%; color:#fff; text-align:center; line-height:14px; background:#a0a0a0;}
@@ -63,7 +72,7 @@ button {border:none; background:transparent; cursor:pointer; color:#dcdcdc;}
 .class-lineWrap .class-lineR .class-line {border-top-color:#ed1100;}
 .class-lineWrap .class-lineY .class-line {border-top-color:#ffd200;}
 
-.class-alarmHistory {position:absolute; bottom:-10px; left:0; width:1610px; height:286px; padding:10px; padding-top:25px; background:#1d1e22; text-align:center;}
+.class-alarmHistory {position:absolute; bottom:0px; left:0; width:1610px; height:286px; padding:10px; padding-top:25px; background:#1d1e22; text-align:center;}
 .class-sizing {position:absolute; top:0; left:0; width:100%; height:16px; background:linear-gradient(rgba(255,255,255,0.1) 2px, #131518 , rgba(0,0,0,0.5) 2px);}
 .class-sizing p {width:100%; height:100%; background:url(../img/images/icon_sizing.png) no-repeat center;}
 .class-alarmHistory h2 {margin-bottom:20px;}
@@ -91,8 +100,8 @@ button {border:none; background:transparent; cursor:pointer; color:#dcdcdc;}
 .class-dateWrap ul li > p {float:left; font-size:14px; color:#fff;}
 .class-dateWrap ul li > div {float:right;}
 .class-dateWrap ul li > div p {position:relative; float:left;}
-.class-btnCalender {position:absolute; top:0; left:0; width:100%; height:100%;}
-.class-dateWrap ul li > div select {float:right; height:45px; border:none; margin-left:20px; background:transparent; color:#ebebeb; font-size:12px; cursor:pointer;}
+.class-btnCalender {width:100%; height:100%; border:none; color:#ebebeb; background:transparent;}
+.class-dateWrap ul li > div select {float:right; height:45px; border:none; margin-left:20px; background:#313337; color:#ebebeb; font-size:12px; cursor:pointer;}
 .class-commonlist {width:100%;}
 .class-commonlist li:after {content:''; display:block; clear:both;}
 .class-commonlist li h4 {float:left;}
@@ -123,6 +132,7 @@ button {border:none; background:transparent; cursor:pointer; color:#dcdcdc;}
 .class-btnFilter.class-act {background:linear-gradient(#000, #191b1e 25%);}
 .class-btnFilter.class-act + .class-filterList {display:block;}
 .class-selectPop form .class-selectList, .class-alarmHistory form .class-selectList {position:relative; width:100%; height:240px; padding:0; margin-bottom:20px; overflow:auto; clear:both;}
+.class-alarmHistory form .class-selectList {height:150px;}
 .class-selectPop form .class-selectList li,  .class-alarmHistory form .class-selectList li {line-height:40px; text-align:center; border-bottom:1px dashed rgba(134,135,137,0.4);}
 .class-selectPop form .class-selectList li:after,  .class-alarmHistory form .class-selectList li:after {content:''; display:block; clear:both;}
 .class-selectPop form .class-listHeading,  .class-alarmHistory form .class-listHeading {padding:0; background:#191b1e;}
@@ -158,6 +168,14 @@ button {border:none; background:transparent; cursor:pointer; color:#dcdcdc;}
 .class-alarmsWrap .class-alarmId {width:241px;}
 .class-alarmsWrap .class-listHeading .class-alarmId {width:246px;}
 .class-alarmsWrap .class-check input[type="checkbox"] {display:none;}
+
+        /* date */
+.ui-widget.ui-widget-content {border-color:#787878;}
+.ui-widget-content {color:#ebebeb; background:#202226;}
+.ui-widget-header {color:#ebebeb; border-color:#454545; background:#313337;}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {border-color:#565656; color:#ebebeb; background:#202226;}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {border-color:#0277bd; background:#0a2f45;}
+
 /* aside E */
 
 

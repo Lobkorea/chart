@@ -8,11 +8,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="shortcut icon" href="img/images/favicon.ico">
 
-    <link rel="stylesheet" href="css/common.css">
 
 	<!-- 나눔 고딕 및 font-awesome css 추가-->
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/nanumgothic.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    
+    <link rel="stylesheet" href="css/common.css">
+
 
     <script type="text/javascript" src="js/jquery.1.12.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -66,7 +69,19 @@
         </h2>
         
         <!-- alarm history pop-up open시 class-openHistory 추가 -->
-        <div class="class-chartInner"><!-- chart 들어가는 자리 입니다 --></div>
+        <div class="class-chartInner">
+            <div class="class-barWrap">
+                <div class="class-barBG">
+                    <div class="class-barInner class-left"></div>
+                    
+                    <button class="class-iconBar1"><span></span></button>
+                    <button class="class-iconBar2"><span></span></button>
+                    
+                    <div class="class-barInner class-right"></div>
+                </div>
+            </div>
+        <!-- chart 들어가는 자리 입니다 -->
+        </div>
         
         <!-- chart 생성시 class-none 삭제 -->
         <div class="class-lineWrap class-none">
@@ -89,6 +104,15 @@
     
     <!-- click event 발생하여 활성화 할 시 class-none 삭제 -->
     <!-- click event 발생하여 비활성화 할 시 class-none -->
+    <script>
+      $( function() {
+        $( "#id-alarmHistory" ).resizable({
+            handles:'n',
+            minHeight:286,
+            maxHeight:600
+        });
+      } );
+    </script>
     <section id="id-alarmHistory" class="class-alarmHistory class-none">
         <div class="class-sizing"><p></p></div>
         
@@ -145,7 +169,7 @@
                 <li class="class-alarmLevel">
                     
                     <!-- click event 발생 시 class-act -->
-                    <button class="class-btnFilter class-act">Alarm Level<span></span></button>
+                    <button class="class-btnFilter">Alarm Level<span></span></button>
 
                     <ul class="class-filterList">
                         <li>
@@ -171,6 +195,61 @@
             </ul>
 
             <ul class="class-selectList">
+                <li class="class-listInner">
+                    <button class="class-innerCheck"></button>
+                    <p class="class-AOT">2018-03-07 <span>12:10</span></p>
+                    <p class="class-ART">2018-03-07 <span>12:13</span></p>
+                    <p class="class-unit">BOTTOM ZONE</p>
+                    <p class="class-alarmId">123</p>
+                    <p class="class-alarmLevel">H</p>
+                    <p class="class-alarmtext">Bottom 9 &#58; Rise Rate Alarm on Channel</p>
+                    <p class="class-solution">Blower failed or breaker tripped or heater failure</p>
+                </li>
+                
+                <li class="class-listInner">
+                    <button class="class-innerCheck"></button>
+                    <p class="class-AOT">2018-03-07 <span>12:10</span></p>
+                    <p class="class-ART">2018-03-07 <span>12:13</span></p>
+                    <p class="class-unit">BOTTOM ZONE</p>
+                    <p class="class-alarmId">123</p>
+                    <p class="class-alarmLevel">H</p>
+                    <p class="class-alarmtext">Bottom 9 &#58; Rise Rate Alarm on Channel</p>
+                    <p class="class-solution">Blower failed or breaker tripped or heater failure</p>
+                </li>
+                
+                <li class="class-listInner">
+                    <button class="class-innerCheck"></button>
+                    <p class="class-AOT">2018-03-07 <span>12:10</span></p>
+                    <p class="class-ART">2018-03-07 <span>12:13</span></p>
+                    <p class="class-unit">BOTTOM ZONE</p>
+                    <p class="class-alarmId">123</p>
+                    <p class="class-alarmLevel">H</p>
+                    <p class="class-alarmtext">Bottom 9 &#58; Rise Rate Alarm on Channel</p>
+                    <p class="class-solution">Blower failed or breaker tripped or heater failure</p>
+                </li>
+                
+                <li class="class-listInner">
+                    <button class="class-innerCheck"></button>
+                    <p class="class-AOT">2018-03-07 <span>12:10</span></p>
+                    <p class="class-ART">2018-03-07 <span>12:13</span></p>
+                    <p class="class-unit">BOTTOM ZONE</p>
+                    <p class="class-alarmId">123</p>
+                    <p class="class-alarmLevel">H</p>
+                    <p class="class-alarmtext">Bottom 9 &#58; Rise Rate Alarm on Channel</p>
+                    <p class="class-solution">Blower failed or breaker tripped or heater failure</p>
+                </li>
+                
+                <li class="class-listInner">
+                    <button class="class-innerCheck"></button>
+                    <p class="class-AOT">2018-03-07 <span>12:10</span></p>
+                    <p class="class-ART">2018-03-07 <span>12:13</span></p>
+                    <p class="class-unit">BOTTOM ZONE</p>
+                    <p class="class-alarmId">123</p>
+                    <p class="class-alarmLevel">H</p>
+                    <p class="class-alarmtext">Bottom 9 &#58; Rise Rate Alarm on Channel</p>
+                    <p class="class-solution">Blower failed or breaker tripped or heater failure</p>
+                </li>
+                
                 <li class="class-listInner">
                     <button class="class-innerCheck"></button>
                     <p class="class-AOT">2018-03-07 <span>12:10</span></p>
@@ -218,7 +297,12 @@
             <li class="class-from class-clearfix">
                 <p>FROM</p>
                 <div>
-                    <p class="class-date">2018-03-06<button class="class-btnCalender"></button></p>
+                    <p class="class-date">
+                        <input type="button" class="class-btnCalender" id="datepicker" value="2018-03-06">
+                    </p>
+					<script>
+						$("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
+					</script>
                     <select class="class-time">
                         <option value="00">00</option>
                         <option value="01">01</option>
@@ -230,7 +314,12 @@
             <li class="class-to class-clearfix">
                 <p>TO</p>
                 <div>
-                    <p class="class-date">2018-03-06<button class="class-btnCalender"></button></p>
+                    <p class="class-date">
+                        <input type="button" class="class-btnCalender" id="datepicker2" value="2018-03-06">
+                    </p>
+					<script>
+						$("#datepicker2").datepicker({ dateFormat: 'yy-mm-dd' });
+					</script>
                     <select class="class-time">
                         <option value="00">00</option>
                         <option value="01">01</option>
