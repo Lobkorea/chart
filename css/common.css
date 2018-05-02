@@ -140,11 +140,15 @@ button {border:none; background:transparent; cursor:pointer; color:#dcdcdc;}
 .class-selectPop form .class-listHeading > li:last-child, .class-alarmHistory form .class-listHeading > li:last-child {border-right:none;}
 .class-listHeading > li button {display:block; width:100%; height:40px;}
 .class-listHeading > li button span {display:inline-block; border-style:solid; border-width:4px; border-color:#fff transparent transparent transparent; margin-left:10px;}
-.class-listHeading li .class-filterList {display:none; position:absolute; top:40px; left:0; z-index:200; width:100%; max-height:240px; padding:0; border:1px solid #868789; background:#24262d; overflow-y:auto;}
+.class-listHeading li .class-filterList {display:none; position:absolute; top:40px; left:0; z-index:200; width:150%; max-height:240px; padding:0; border:1px solid #868789; background:#24262d; }
 .class-listHeading li .class-filterList li {position:relative; width:100%; text-align:left; padding:15px 10px 15px 33px;}
 .class-listHeading li .class-filterList li input[type="checkbox"] {position:absolute; top:50%; left:10px; transform:translateY(-50%);}
-.class-listHeading li .class-filterList li label {display:block; width:100%; height:100%; line-height:1.2em; white-space:normal;word-break:break-all;}
+.class-listHeading li .class-filterList li label {display:block; width:100%; height:100%; line-height:1.2em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 .class-listHeading li .class-filterList li input[type="checkbox"]:checked + label {background:#3fbcef;}
+.class-listHeading li .class-filterList li .class-tooltip {display:none; position:absolute; top:0; left:0; transform:translateY(-100%); width:120%; padding:10px 20px; border-radius:10px; color:#333; background:linear-gradient(#f7f7f7, #cfcfcf);}
+.class-listHeading li .class-filterList li .class-tooltip p {width:100%; white-space:normal; word-break:break-all; line-height:1.2em;}
+.class-listHeading li .class-filterList li .class-tooltip span {position:absolute; bottom:-14px; left:30px; border-width:7px; border-style:solid; border-top-color:#cfcfcf; border-left-color:transparent; border-right-color:transparent; border-bottom-color:transparent;}
+.class-listHeading li .class-filterList li label:hover + .class-tooltip {display:block;}
 .class-line {width:78px;}
 .class-machine {width:177px;}
 .class-unit {width:137px;}
