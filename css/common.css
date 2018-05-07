@@ -49,17 +49,18 @@ button {border:none; background:transparent; cursor:pointer; color:#dcdcdc;}
 .class-chartWrap h2.class-on .class-chartTitle {display:block;}
 .class-chartWrap h2 .class-chartTitle span {color:#a0a0a0;}
 .class-chartWrap h2.class-on .class-noChart {display:none;} 
-.class-chartInner {position:relative; width:100%; height:calc(100% - 47px); background:url(../img/images/chart_empty.png) no-repeat center; background-size:100% auto;}
-.class-chartInner.class-openHistory {height:660px; background-size:100% 660px;}
-.class-barWrap {position:absolute; top:7px; left:40px; width:calc(100% - 55px); height:30px; background:transparent;}
-.class-barWrap .class-barBG {position:relative; width:100%; height:100%; background:#555;}
-.class-barWrap .class-barBG .class-barInner {position:absolute; top:0; height:100%; background:#37383c;}
-.class-barWrap .class-barBG .class-barInner.class-left {left:0; width:750px;}
-.class-barWrap .class-barBG .class-barInner.class-right {right:0; width:0px;}
-.class-barWrap .class-barBG button {position:absolute; top:0; z-index:1; width:30px; height:30px; border-radius:50%; background:#ccc;}
-.class-barWrap .class-barBG button span {display:inline-block; width:4px; height:13px; border-left:1px solid #666; border-right:1px solid #666;}
-.class-iconBar1 {left:735px;}
-.class-iconBar2 {right:-15px;}
+
+#id-chartdiv {width: 1440px; /* 2 min x 60 sec x 10 pixel */ height: 774px;}
+#id-scroll-div {position:relative; width: 2880px; /* dynamic value */ height: 30px;}
+#id-scroll-section {position:relative; width: 1440px; height: 30px; overflow-x: auto;}
+#id-scroll-section::-webkit-scrollbar {width:0; height:30px;}
+#id-scroll-section::-webkit-scrollbar-track {border-radius:0; background:#555;}
+#id-scroll-section::-webkit-scrollbar-thumb {border-radius:0; background:#37383c;}
+.class-controlWrap {position:absolute; top:46px; left:0; width:1440px;}
+.class-controlWrap .class-btnControl {position:absolute; top:0; width:30px; height:30px; border-radius:50%; background:#ccc;}
+.class-controlWrap .class-btnControl span {display:inline-block; width:1px; height:13px; margin:0 1px; background:#666;}
+.class-controlWrap .class-control1 {left:-15px;}
+.class-controlWrap .class-control2 {left:705px;}
 .class-lineWrap div {position:absolute; width:100%; padding-left:52px;}
 .class-lineWrap div input[type="checkbox"] {display:none;}
 .class-lineWrap div label {position:absolute; top:-8px; right:-20px; display:block; width:16px; height:16px; border-radius:50%; color:#fff; text-align:center; line-height:14px; background:#a0a0a0;}
@@ -140,15 +141,11 @@ button {border:none; background:transparent; cursor:pointer; color:#dcdcdc;}
 .class-selectPop form .class-listHeading > li:last-child, .class-alarmHistory form .class-listHeading > li:last-child {border-right:none;}
 .class-listHeading > li button {display:block; width:100%; height:40px;}
 .class-listHeading > li button span {display:inline-block; border-style:solid; border-width:4px; border-color:#fff transparent transparent transparent; margin-left:10px;}
-.class-listHeading li .class-filterList {display:none; position:absolute; top:40px; left:0; z-index:200; width:150%; max-height:240px; padding:0; border:1px solid #868789; background:#24262d; }
-.class-listHeading li .class-filterList li {position:relative; width:100%; text-align:left; padding:15px 10px 15px 33px;}
+.class-listHeading li .class-filterList {display:none; position:absolute; top:40px; left:0; z-index:200; width:100%; max-height:240px; padding:0; border:1px solid #868789; background:#24262d; overflow-y:scroll;}
+.class-listHeading li .class-filterList li {position:relative; width:100%; text-align:left;}
 .class-listHeading li .class-filterList li input[type="checkbox"] {position:absolute; top:50%; left:10px; transform:translateY(-50%);}
-.class-listHeading li .class-filterList li label {display:block; width:100%; height:100%; line-height:1.2em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.class-listHeading li .class-filterList li label {display:block; width:100%; height:100%; padding:15px 10px 15px 33px; line-height:1.2em; word-break:break-all;}
 .class-listHeading li .class-filterList li input[type="checkbox"]:checked + label {background:#3fbcef;}
-.class-listHeading li .class-filterList li .class-tooltip {display:none; position:absolute; top:0; left:0; transform:translateY(-100%); width:120%; padding:10px 20px; border-radius:10px; color:#333; background:linear-gradient(#f7f7f7, #cfcfcf);}
-.class-listHeading li .class-filterList li .class-tooltip p {width:100%; white-space:normal; word-break:break-all; line-height:1.2em;}
-.class-listHeading li .class-filterList li .class-tooltip span {position:absolute; bottom:-14px; left:30px; border-width:7px; border-style:solid; border-top-color:#cfcfcf; border-left-color:transparent; border-right-color:transparent; border-bottom-color:transparent;}
-.class-listHeading li .class-filterList li label:hover + .class-tooltip {display:block;}
 .class-line {width:78px;}
 .class-machine {width:177px;}
 .class-unit {width:137px;}
@@ -158,7 +155,7 @@ button {border:none; background:transparent; cursor:pointer; color:#dcdcdc;}
 .class-listInner {position:relative;}
 .class-innerCheck {position:absolute; top:0; left:0; width:100%; height:100%;}
 .class-innerCheck.class-checked ~ p {color:#333; background:#c0bdc0;}
-.class-listInner p {float:left; border-right:1px dashed rgba(134,135,137,0.4);}
+.class-listInner p {float:left; border-right:1px dashed rgba(134,135,137,0.4); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 .class-listInner p:last-of-type {border-right:none;}
 .class-selectPop form > p {float:left; color:#a0a0a0;}
 .class-selectPop form > .class-btnWrap {float:right;}
