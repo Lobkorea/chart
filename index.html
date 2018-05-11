@@ -75,11 +75,22 @@
         
         <!-- scroll bar button -->
         <div class="class-controlWrap">
-            <button class="class-btnControl class-control1"><span></span><span></span></button>
-            <button class="class-btnControl class-control2"><span></span><span></span></button>
+            <div class="draggable class-btnControl class-control1"><span></span><span></span></div>
+            <div class="draggable class-btnControl class-control2"><span></span><span></span></div>
         </div>
         
-        <div id="id-chartdiv"></div>
+        <div id="id-chartdiv">
+            <!-- toggleClass 'class-none' -->
+            <div class="class-alarmBell class-none">
+                <img src="img/images/icon-bell.png" alt="bell icon">
+                <span>15</span>
+            </div>        
+        
+            <!-- 보여줄 데이터가 없는 경우 removeClass('class-none') -->
+            <div class="class-noData class-none">
+                <p>No Data</p>
+            </div>
+        </div>
         
         <!-- chart 생성시 class-none 삭제 -->
         <div class="class-lineWrap class-none">
@@ -307,6 +318,10 @@
                         <option value="02">02</option>
                         <option value="03">03</option>
                     </select>
+                    
+                    <div class="class-dateInfo class-none">
+                        <p>The maximum viewable<br>duration is 1 months.</p>
+                    </div>
                 </div>
             </li>
             <li class="class-to class-clearfix">
@@ -324,6 +339,10 @@
                         <option value="02">02</option>
                         <option value="03">03</option>
                     </select>
+                    
+                    <div class="class-dateInfo class-none">
+                        <p>The maximum viewable<br>duration is 1 months.</p>
+                    </div>
                 </div>
             </li>
         </ul>
@@ -341,7 +360,7 @@
             <li class="class-list1">
                 <h4>
                     <span class="class-icon"></span>
-                    <span>관리 수준 0</span>
+                    <span>관리 수준 관리 수준 관리 수준 관리 수준</span>
                 </h4>
 
                 <form>
@@ -354,7 +373,7 @@
             <li class="class-list2">
                 <h4>
                     <span class="class-icon"></span>
-                    <span>관리 수준 1</span>
+                    <span>관리 수준 1관리 수준 1관리 수준 1관리 수준 1관리 수준 1관리 수준 1관리 수준 1관리 수준 1관리 수준 1관리 수준 1</span>
                 </h4>
 
                 <form>
@@ -369,14 +388,14 @@
 
         <!-- click event 발생하여 활성화 할 시 class-none 삭제 -->
         <!-- click event 발생하여 비활성화 할 시 class-none -->
-        <div class="class-selectPop">
+        <div class="class-selectPop class-none">
             <div class="class-popTop class-clearfix">                
                 <h4>Select Items</h4>
 
                 <form id="id-alarmSearch">
                     <span>SEARCH</span>
 
-                    <input type="text" name="alarmSearch">
+                    <input type="text" name="itemSearch">
                     <button type="submit" form="id-alarmSearch" class="class-btnSearch">
                         <i class="fas fa-search"></i>
                     </button>
