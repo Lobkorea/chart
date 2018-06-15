@@ -68,6 +68,18 @@
             <p class="class-noChart">Please select an item to be shown in the chart.</p>
         </h2>
         
+        <!-- 0612 add -->
+        <div class="class-chartTime">
+            <p class="class-timeInner">
+                <span class="class-start">2018-06-12 00:00:00.000</span>
+                <span>~</span>
+                <span class="class-end">2018-06-12 00:00:00.000</span>
+            </p>
+            
+            <p>1 hour</p>
+        </div>
+        <!-- 0612 add -->
+        
         <!-- alarm history pop-up open시 class-openHistory 추가 -->
         <section id="id-scroll-section">
             <div id="id-scroll-div"></div>
@@ -87,7 +99,7 @@
             </div>        
         
             <!-- 보여줄 데이터가 없는 경우 removeClass('class-none') -->
-            <div class="class-noData class-none">
+            <div class="class-noData">
                 <p>No Data</p>
             </div>
         </div>
@@ -356,7 +368,7 @@
         </button>
 
         <!-- select item 추가 시 ul에 removeClass'class-none' -->
-        <ul class="class-commonlist class-itemList class-none">
+        <ul class="class-commonlist class-itemList">
             <li class="class-list1">
                 <h4>
                     <span class="class-icon"></span>
@@ -373,7 +385,7 @@
             <li class="class-list2">
                 <h4>
                     <span class="class-icon"></span>
-                    <span>관리 수준 1관리 수준 1관리 수준 1관리 수준 1관리 수준 1관리 수준 1관리 수준 1관리 수준 1관리 수준 1관리 수준 1</span>
+                    <span>관리 수준 1관리 수준 1관리 수준 1관리 수준</span>
                 </h4>
 
                 <form>
@@ -388,7 +400,7 @@
 
         <!-- click event 발생하여 활성화 할 시 class-none 삭제 -->
         <!-- click event 발생하여 비활성화 할 시 class-none -->
-        <div class="class-selectPop class-none">
+        <div class="class-selectPop">
             <div class="class-popTop class-clearfix">                
                 <h4>Select Items</h4>
 
@@ -408,29 +420,9 @@
                     <li class="class-line">
                     
                         <!-- click event 발생 시 class-act -->
-                        <button class="class-btnFilter class-act">Line<span></span></button>
+                        <button class="class-btnFilter">Line<span></span></button>
 
                         <ul class="class-filterList">
-                            <li>
-                                <input type="checkbox" id="id-il1">
-                                <label for="id-il1">LINE01LINE01LINE01</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="id-il1">
-                                <label for="id-il1">LINE01LINE01LINE01</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="id-il1">
-                                <label for="id-il1">LINE01LINE01LINE01</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="id-il1">
-                                <label for="id-il1">LINE01LINE01LINE01</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="id-il1">
-                                <label for="id-il1">LINE01LINE01LINE01</label>
-                            </li>
                             <li>
                                 <input type="checkbox" id="id-il1">
                                 <label for="id-il1">LINE01LINE01LINE01</label>
@@ -524,7 +516,7 @@
                     <li class="class-type">
                     
                         <!-- click event 발생 시 class-act -->
-                        <button class="class-btnFilter class-act">Type<span></span></button>
+                        <button class="class-btnFilter">Type<span></span></button>
 
                         <ul class="class-filterList">
                             <li>
@@ -544,31 +536,210 @@
                 </ul>
                 
                 <ul class="class-selectList">
-                    <li class="class-listInner">
-                        <button class="class-innerCheck"></button>
-                        <p class="class-line">Line01Line01Line01Line01Line01Line01Line01</p>
-                        <p class="class-machine">Machine01</p>
-                        <p class="class-unit">Unit01Unit01Unit01Unit01Unit01</p>
-                        <p class="class-item">item01</p>
-                        <p class="class-type">type01</p>
+                    <!-- list click하여 활성화 되면 li에 class-checked 추가 -->
+                    <li class="class-listInner class-checked">
+                        <p class="class-line">
+                            <span>Line01Line01Line01Line01Line01Line01Line01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-machine">
+                            <span>Machine01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-unit">
+                            <span>Unit01Unit01Unit01Unit01Unit01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-item">
+                            <span>item01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-type">
+                            <span>type0</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
                     </li>
 
                     <li class="class-listInner">
-                        <button class="class-innerCheck class-checked"></button>
-                        <p class="class-line">Line01</p>
-                        <p class="class-machine">Machine01</p>
-                        <p class="class-unit">Unit01</p>
-                        <p class="class-item">item01</p>
-                        <p class="class-type">type01</p>
+                        <p class="class-line">
+                            <span>Line01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-machine">
+                            <span>Machine01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-unit">
+                            <span>Unit01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-item">
+                            <span>item01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-type">
+                            <span>type01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                    </li>
+
+                    <li class="class-listInner class-checked">
+                        <p class="class-line">
+                            <span>Line01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-machine">
+                            <span>Machine01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-unit">
+                            <span>Unit01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-item">
+                            <span>item01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-type">
+                            <span>type01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                    </li>
+                    <li class="class-listInner class-checked">
+                        <p class="class-line">
+                            <span>Line01Line01Line01Line01Line01Line01Line01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-machine">
+                            <span>Machine01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-unit">
+                            <span>Unit01Unit01Unit01Unit01Unit01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-item">
+                            <span>item01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-type">
+                            <span>type0</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
                     </li>
 
                     <li class="class-listInner">
-                        <button class="class-innerCheck class-checked"></button>
-                        <p class="class-line">Line01</p>
-                        <p class="class-machine">Machine01</p>
-                        <p class="class-unit">Unit01</p>
-                        <p class="class-item">item01</p>
-                        <p class="class-type">type01</p>
+                        <p class="class-line">
+                            <span>Line01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-machine">
+                            <span>Machine01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-unit">
+                            <span>Unit01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-item">
+                            <span>item01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-type">
+                            <span>type01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                    </li>
+
+                    <li class="class-listInner class-checked">
+                        <p class="class-line">
+                            <span>Line01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-machine">
+                            <span>Machine01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-unit">
+                            <span>Unit01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-item">
+                            <span>item01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-type">
+                            <span>type01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                    </li>
+                    <li class="class-listInner class-checked">
+                        <p class="class-line">
+                            <span>Line01Line01Line01Line01Line01Line01Line01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-machine">
+                            <span>Machine01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-unit">
+                            <span>Unit01Unit01Unit01Unit01Unit01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-item">
+                            <span>item01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-type">
+                            <span>type0</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                    </li>
+
+                    <li class="class-listInner">
+                        <p class="class-line">
+                            <span>Line01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-machine">
+                            <span>Machine01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-unit">
+                            <span>Unit01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-item">
+                            <span>item01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-type">
+                            <span>type01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                    </li>
+
+                    <li class="class-listInner class-checked">
+                        <p class="class-line">
+                            <span>Line01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-machine">
+                            <span>Machine01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-unit">
+                            <span>Unit01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-item">
+                            <span>item01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
+                        <p class="class-type">
+                            <span>type01</span>
+                            <span class="class-tooltip">Unit01Unit01Unit01Unit01Unit01</span>
+                        </p>
                     </li>
                 </ul>
 
@@ -753,116 +924,29 @@
                 </ul>
                 
                 <ul class="class-selectList">
-                    <li class="class-listInner">
-                        <button class="class-innerCheck class-checked"></button>
+                    <li class="class-listInner class-checked">
                         <p class="class-check">
                             <input type="checkbox" id="id-select1">
                             <label for="id-select1">
                                 <i class="fas fa-check"></i>
                             </label>
                         </p>
-                        <p class="class-line">Line01</p>
-                        <p class="class-machine">Machine01</p>
-                        <p class="class-unit">Unit01</p>
-                        <p class="class-alarmId">item01</p>
-                    </li>
-
-                    <li class="class-listInner">
-                        <button class="class-innerCheck"></button>
-                        <p class="class-check">
-                            <input type="checkbox" id="id-select1">
-                            <label for="id-select1">
-                                <i class="fas fa-check"></i>
-                            </label>
+                        <p class="class-line">
+                            <span>Line01</span>
+                            <span class="class-tooltip">Line01</span>
                         </p>
-                        <p class="class-line">Line01</p>
-                        <p class="class-machine">Machine01</p>
-                        <p class="class-unit">Unit01</p>
-                        <p class="class-alarmId">item01</p>
-                    </li>
-
-                    <li class="class-listInner">
-                        <button class="class-innerCheck"></button>
-                        <p class="class-check">
-                            <input type="checkbox" id="id-select1">
-                            <label for="id-select1">
-                                <i class="fas fa-check"></i>
-                            </label>
+                        <p class="class-machine">
+                            <span>Machine01</span>
+                            <span class="class-tooltip">Machine01</span>
                         </p>
-                        <p class="class-line">Line01</p>
-                        <p class="class-machine">Machine01</p>
-                        <p class="class-unit">Unit01</p>
-                        <p class="class-alarmId">item01</p>
-                    </li>
-
-                    <li class="class-listInner">
-                        <button class="class-innerCheck"></button>
-                        <p class="class-check">
-                            <input type="checkbox" id="id-select1">
-                            <label for="id-select1">
-                                <i class="fas fa-check"></i>
-                            </label>
+                        <p class="class-unit">
+                            <span>Unit01</span>
+                            <span class="class-tooltip">Unit01</span>
                         </p>
-                        <p class="class-line">Line01</p>
-                        <p class="class-machine">Machine01</p>
-                        <p class="class-unit">Unit01</p>
-                        <p class="class-alarmId">item01</p>
-                    </li>
-
-                    <li class="class-listInner">
-                        <button class="class-innerCheck"></button>
-                        <p class="class-check">
-                            <input type="checkbox" id="id-select1">
-                            <label for="id-select1">
-                                <i class="fas fa-check"></i>
-                            </label>
+                        <p class="class-alarmId">
+                            <span>item01</span>
+                            <span class="class-tooltip">item01item01item01item01item01item01item01item01item01item01item01item01item01item01item01item01item01item01item01</span>
                         </p>
-                        <p class="class-line">Line01</p>
-                        <p class="class-machine">Machine01</p>
-                        <p class="class-unit">Unit01</p>
-                        <p class="class-alarmId">item01</p>
-                    </li>
-
-                    <li class="class-listInner">
-                        <button class="class-innerCheck"></button>
-                        <p class="class-check">
-                            <input type="checkbox" id="id-select1">
-                            <label for="id-select1">
-                                <i class="fas fa-check"></i>
-                            </label>
-                        </p>
-                        <p class="class-line">Line01</p>
-                        <p class="class-machine">Machine01</p>
-                        <p class="class-unit">Unit01</p>
-                        <p class="class-alarmId">item01</p>
-                    </li>
-
-                    <li class="class-listInner">
-                        <button class="class-innerCheck"></button>
-                        <p class="class-check">
-                            <input type="checkbox" id="id-select1">
-                            <label for="id-select1">
-                                <i class="fas fa-check"></i>
-                            </label>
-                        </p>
-                        <p class="class-line">Line01</p>
-                        <p class="class-machine">Machine01</p>
-                        <p class="class-unit">Unit01</p>
-                        <p class="class-alarmId">item01</p>
-                    </li>
-
-                    <li class="class-listInner">
-                        <button class="class-innerCheck"></button>
-                        <p class="class-check">
-                            <input type="checkbox" id="id-select1">
-                            <label for="id-select1">
-                                <i class="fas fa-check"></i>
-                            </label>
-                        </p>
-                        <p class="class-line">Line01</p>
-                        <p class="class-machine">Machine01</p>
-                        <p class="class-unit">Unit01</p>
-                        <p class="class-alarmId">item01</p>
                     </li>
                 </ul>
 
