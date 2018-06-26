@@ -13,13 +13,21 @@
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/nanumgothic.css">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/jquery.scrollbar.css">
     
     <link rel="stylesheet" href="css/common.css">
 
 
     <script type="text/javascript" src="js/jquery.1.12.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollbar.min.js"></script>
     <script type="text/javascript" src="js/fontawsome.js"></script>
+
+    <script>
+        jQuery(document).ready(function(){
+            jQuery('.class-scrollbar-inner').scrollbar();
+        });
+    </script>
 
 </head>
 <body>
@@ -81,7 +89,7 @@
         <!-- 0612 add -->
         
         <!-- alarm history pop-up open시 class-openHistory 추가 -->
-        <section id="id-scroll-section">
+        <section id="id-scroll-section" class="class-scrollbar-inner">
             <div id="id-scroll-div"></div>
         </section>
         
@@ -400,7 +408,7 @@
 
         <!-- click event 발생하여 활성화 할 시 class-none 삭제 -->
         <!-- click event 발생하여 비활성화 할 시 class-none -->
-        <div class="class-selectPop">
+        <div class="class-selectPop class-none">
             <div class="class-popTop class-clearfix">                
                 <h4>Select Items</h4>
 
