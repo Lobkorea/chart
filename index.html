@@ -13,20 +13,220 @@
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/nanumgothic.css">
     <link rel="stylesheet" href="css/jquery-ui.min.css">
-    <link rel="stylesheet" href="css/jquery.scrollbar.css">
+<!--    <link rel="stylesheet" href="css/jquery.scrollbar.css">-->
     
     <link rel="stylesheet" href="css/common.css">
 
 
     <script type="text/javascript" src="js/jquery.1.12.3.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/jquery.scrollbar.min.js"></script>
+<!--    <script type="text/javascript" src="js/jquery.scrollbar.min.js"></script>-->
     <script type="text/javascript" src="js/fontawsome.js"></script>
 
     <script>
-        jQuery(document).ready(function(){
-            jQuery('.class-scrollbar-inner').scrollbar();
-        });
+    (function($) {
+	var Scroll = function($el) {
+		var self = this;
+		var $viewport = $el.find('> .class-viewport');
+		var $content = $viewport.find('> .class-content');
+		var $scrollbar = {
+			x: null,
+			y: null
+		};
+
+		var $thumb = {
+			x: null,
+			y: null
+		}
+
+		var lastScroll = {
+			top: -1,
+			left: -1
+		};
+		var id = identifier + counter++;
+
+		this.update = function() {
+			var scroll = {
+				top:  $viewport.scrollTop(),
+				left: $viewport.scrollLeft()
+			};
+			var perform = function(vertical) {
+				var vocab = vocabulary(vertical);
+
+				var scrollSize = $content[0]['scroll' + vocab.sizeUpper];
+				var viewportSize = $viewport[vocab.size]();
+				if(scrollSize <= viewportSize) {
+					$scrollbar[vocab.axis].addClass('disabled');
+					return;
+				}
+				else {
+					$scrollbar[vocab.axis].removeClass('disabled');
+				}
+
+				if(scroll[vocab.pos] !== lastScroll[vocab.pos]) {
+					lastScroll[vocab.pos] = scroll[vocab.pos];
+					var elSize = $el[vocab.size]();
+
+					var maxScrollSize = scrollSize - elSize;
+					var ratio = elSize / scrollSize;
+					var scrollRelative = scroll[vocab.pos] / maxScrollSize;
+					var thumbSize = ((ratio > 1) ? 1 : ratio) * elSize;
+					var scrollbarSize = $scrollbar[vocab.axis][vocab.size]();
+
+					var css = {};
+					css[vocab.size] = thumbSize + 'px';
+					css[vocab.pos] = (scrollRelative * (scrollbarSize - thumbSize)) + 'px';
+					$thumb[vocab.axis].css(css);
+
+					console.log('scrollRelative = ' + scrollRelative);
+					console.log('scrollTop      = ' + scroll[vocab.pos]);
+					console.log('maxScrollSize  = ' + maxScrollSize);
+					console.log('scrollSize     = ' + scrollSize);
+				}
+			}
+			perform(true);
+			perform(false);
+		}
+
+		var setupEvents = function() {
+			$viewport.scroll(function(e) {
+				self.update();
+			});
+			$el.mouseover(function(e) {
+				self.update();
+			});
+
+			var setupOrientation = function(vertical) {
+				var vocab = vocabulary(vertical);
+				$scrollbar[vocab.axis].click(function(e) {
+					if($(e.target).is($scrollbar[vocab.axis])) {
+						var move = $viewport[vocab.size]();
+						if(parseFloat($thumb[vocab.axis].css(vocab.pos)) >
+						   (e['page' + vocab.axisUpper] -
+						    $scrollbar[vocab.axis].offset()[vocab.pos])) {
+							move *= -1;
+						}
+						$viewport['scroll' + vocab.posUpper]($viewport['scroll' + vocab.posUpper]() + move);
+						self.update();
+					}
+				});
+				$thumb[vocab.axis].mousedown(function(e) {
+					var $body = $doc.find('body');
+					var origUnselectable = $body.attr('unselectable');
+					$body.attr('unselectable', 'on');
+					var last = e['page' + vocab.axisUpper];
+					$scrollbar[vocab.axis].addClass('dragScrolling');
+					$doc.on('mousemove.' + id, function(e) {
+						var elSize = $el[vocab.size]();
+						var scrollSize = $content[0]['scroll' + vocab.sizeUpper];
+						var ratio = elSize / scrollSize;
+						var move = (e['page' + vocab.axisUpper] - last) / ratio;
+						$viewport['scroll' + vocab.posUpper]($viewport['scroll' + vocab.posUpper]() + move);
+						last = e['page' + vocab.axisUpper];
+						self.update();
+						// Prevent selection
+						e.preventDefault();
+					});
+					$doc.on('selectstart.' + id, function(e) {
+						e.preventDefault();
+					});
+					$doc.one('mouseup', function(e) {
+						$doc.off('.' + id);
+						$body.attr('unselectable', origUnselectable || 'off');
+						$scrollbar[vocab.axis].removeClass('dragScrolling');
+					});
+				});
+			}
+
+			setupOrientation(true);
+			setupOrientation(false);
+		}
+		var init = function() {
+			if($el.is('.class-scrollX')) {
+				$viewport.css({
+					'padding-bottom': scrollbarSize + 'px',
+					'margin-bottom': (-scrollbarSize) + 'px'
+				});
+				$content.css({
+					'margin-bottom': (-scrollbarSize) + 'px'
+				});
+				$el.prepend($(scrollbarTpl).addClass('class-scrollbarX'));
+			}
+			if($el.is('.scrollY')) {
+				$viewport.css({
+					'padding-right': scrollbarSize + 'px',
+					'margin-right': (-scrollbarSize) + 'px'
+				});
+				$content.css({
+					'margin-right': (-scrollbarSize) + 'px'
+				});
+				$el.prepend($(scrollbarTpl).addClass('scrollbarY'));
+			}
+			$scrollbar.x = $el.find('> .class-scrollbarX');
+			$scrollbar.y = $el.find('> .scrollbarY');
+			$thumb.x = $scrollbar.x.find('> .class-thumb');
+			$thumb.y = $scrollbar.y.find('> .class-thumb');
+
+			setupEvents();
+
+			$el.addClass('initialized');
+			self.update();
+		}
+
+		init.apply(this);
+	}
+
+	var identifier = '__jsFancyScroll';
+	var counter = 0;
+	var scrollbarSize = 0;
+	var $doc = $(document);
+	var scrollbarTpl = '<div><div class="class-thumb"></div></div>';
+	var vocabulary = function(vertical) {
+		return {
+			axis: vertical ? 'y' : 'x',
+			axisUpper: vertical ? 'Y' : 'X',
+			pos: vertical ? 'top' : 'left',
+			posUpper: vertical ? 'Top' : 'Left',
+			size: vertical ? 'height' : 'width',
+			sizeUpper: vertical ? 'Height' : 'Width'
+		};
+	}
+	$.fn.fancyScroll = function() {
+		this.filter('.class-scrollX, .scrollY').each(function(i, el) {
+			var $el = $(el);
+			var scroll = $el.data(identifier);
+			if(!scroll) {
+				scroll = new Scroll($el);
+				$el.data(identifier, scroll);
+			}
+			else {
+				scroll.update();
+			}
+		});
+		return this;
+	}
+
+	$doc.ready(function() {
+		var $container = $('<div><div></div></div>');
+		$('body').append($container);
+		$container.css({
+			overflow: 'scroll',
+			height:   '100px',
+			width:    '100px'
+		});
+		var $scroll = $container.find('> div').css({
+			height: '100%',
+			width:  '100%'
+		});
+		scrollbarSize = $container.width() - $scroll.width();
+		$container.remove();
+	});
+
+	$doc.on('mousemove', '.class-scrollX, .scrollY', function(e) {
+		$(e.currentTarget).fancyScroll();
+	});
+
+})(jQuery);
     </script>
 
 </head>
@@ -89,9 +289,27 @@
         <!-- 0612 add -->
         
         <!-- alarm history pop-up open시 class-openHistory 추가 -->
-        <section id="id-scroll-section" class="class-scrollbar-inner">
+        
+        <!-- chart scrollbar -->
+        <div id="id-scrollX" class="class-scrollX">
+            <!-- ↓ scrollbar track -->
+            <div class="class-scrollbarX">
+                <!-- ↓ scrollbar thumb -->
+                <div class="class-thumb"></div>
+            </div>
+
+            <div class="class-viewport">
+                <!-- ↓ .class-content로 width 조절 -->
+                <div class="class-content"></div>
+            </div>
+        </div>
+        <!-- chart scrollbar -->
+        
+<!--
+        <section id="id-scroll-section" class="class-scrollbar">
             <div id="id-scroll-div"></div>
         </section>
+-->
         
         <!-- scroll bar button -->
         <div class="class-controlWrap">
