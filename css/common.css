@@ -76,9 +76,9 @@ button {border:none; background:transparent; cursor:pointer; color:#dcdcdc;}
     /* chart scroll */
 [unselectable=on] {-webkit-user-select: none; -moz-user-select: none; -khtml-user-select: none; user-select: none;}
 .class-scrollX {width:1440px; height:30px; position: relative; overflow: hidden; padding: 0;}
-.class-scrollX .class-scrollbarX {height:30px; position: absolute; cursor: pointer; z-index: 100; background: #555;}
+.class-scrollX .class-scrollbarX {height:30px; position: absolute; cursor: pointer; z-index: 100; background: #37383c;}
 .class-scrollX .class-scrollbarX.disabled {display: none;}
-.class-scrollX .class-scrollbarX > .class-thumb {position: absolute; left: 0; top: 0; height: 100%; background: #37383c;}
+.class-scrollX .class-scrollbarX > .class-thumb {position: absolute; left: 0; top: 0; height: 100%; background: #555;}
 .class-scrollX .class-scrollbarX:hover,
 .class-scrollX .class-scrollbarX.dragScrolling {z-index: 200;}
 .class-scrollX > .class-scrollbarX {bottom: 0; left: 0; right: 0; height: 30px;}
